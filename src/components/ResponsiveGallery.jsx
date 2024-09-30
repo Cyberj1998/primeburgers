@@ -7,8 +7,8 @@ import Burger4 from '../assets/Burgers/burger_wallpaper/burger_wallpaper_4.png';
 import Burger5 from '../assets/Burgers/burger_wallpaper/burger_wallpaper_5.png';
 import Burger6 from '../assets/Burgers/burger_wallpaper/burger_wallpaper_6.png';
 import Burger7 from '../assets/Burgers/Burger.jpg'
-import Burger8 from '../assets/burgers/Burger2.jpg'
-import Burger9 from '../assets/burgers/Burger3.jpg'
+import Burger8 from '../assets/Burgers/burger2.jpg'
+import Burger9 from '../assets/Burgers/burger3.jpg'
 // Add more images as needed
 
 const ResponsiveGallery = () => {
