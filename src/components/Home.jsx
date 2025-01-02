@@ -8,7 +8,6 @@ import {
   headContainerAnimation,
   headContentAnimation,
   headTextAnimation,
-  slideAnimation
 } from './config'
 
 
@@ -40,7 +39,7 @@ function Home() {
   #9fffcb
   #25a18e
   #7ae582
-
+  
   #00a5cf
   */ 
   return (
@@ -81,5 +80,6 @@ function Home() {
     </div>
   )
 }
+
 
 export default Home

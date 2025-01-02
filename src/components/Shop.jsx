@@ -2,6 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://vbjtxjprqjeydsnyrxgp.supabase.co'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZianR4anBycWpleWRzbnlyeGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUyMjc3MzMsImV4cCI6MjA1MDgwMzczM30.pYIhd7THaDdRVQhk13oQv30g0ndz3af1LvWE0oSVj0s'
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 const dotVariants = {
   initial: { y: 0 },
@@ -20,6 +24,23 @@ const URL = 'https://burgersapi.onrender.com/burgers'
 
 const shop = ({burgersData, setBurgersData}) => {
 
+
+  const fetchProductsFromSupabase = async () => {
+
+    let { data, error } = await supabase
+    .from('burgers')
+    .select('*')
+    console.log(data); // Logging fetched products
+    if (error) {
+      console.log(error);
+    } else {
+      setBurgersData(data); // Update state with the fetched data
+      console.log(data); // Log the products
+    }
+
+  };
+
+
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const fetchData = () => {
@@ -34,10 +55,12 @@ const shop = ({burgersData, setBurgersData}) => {
       setActiveIndex(Math.floor(Math.random() * 100));
     }, 300); // Decreased interval time to 300 milliseconds
 
-    fetchData()
+    if (burgersData.length === 0) {
+      fetchProductsFromSupabase();
+  }
 
     return () => clearInterval(interval);
-  }, []);
+  }, [burgersData]);
 
 
   return (
@@ -45,12 +68,12 @@ const shop = ({burgersData, setBurgersData}) => {
       <div className='border border-[#5f5f5f] h-[70%] w-[70%]  backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-wrap justify-center z-[2] overflow-scroll'>
       {
         burgersData.length === 0 ? (
-          <h1 className='text-green-600'>Loading...</h1>
+          <h1 className='text-green-600 font-semibold'>Loading...</h1>
         )
         : (
-          <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} className="flex flex-wrap">
+          <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 1 }} className="flex flex-wrap justify-center">
             {burgersData.map((burger, index) => (
-              <motion.div key={burger.key} initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="m-2">
+              <motion.div key={index} initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: index * 0.1 }} className="m-2">
                 <ProductCard data={burger} />
               </motion.div>
           ))}
