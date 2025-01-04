@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
 import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://vbjtxjprqjeydsnyrxgp.supabase.co'
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZianR4anBycWpleWRzbnlyeGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUyMjc3MzMsImV4cCI6MjA1MDgwMzczM30.pYIhd7THaDdRVQhk13oQv30g0ndz3af1LvWE0oSVj0s'
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 const dotVariants = {
@@ -20,12 +20,13 @@ const dotVariants = {
   },
 }
 
-const URL = 'https://burgersapi.onrender.com/burgers'
+//const URL = 'https://burgersapi.onrender.com/burgers'
 
 const shop = ({burgersData, setBurgersData}) => {
 
 
   const fetchProductsFromSupabase = async () => {
+
 
     let { data, error } = await supabase
     .from('burgers')
@@ -38,17 +39,19 @@ const shop = ({burgersData, setBurgersData}) => {
       console.log(data); // Log the products
     }
 
+
   };
 
 
   const [activeIndex, setActiveIndex] = useState(-1);
-
+  /*
   const fetchData = () => {
     fetch(URL).then(res=>res.json()).then(data=>{
       setBurgersData(data)
       console.log(data)
     })
   }
+  */
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,7 +60,8 @@ const shop = ({burgersData, setBurgersData}) => {
 
     if (burgersData.length === 0) {
       fetchProductsFromSupabase();
-  }
+      console.log('hola')
+    }
 
     return () => clearInterval(interval);
   }, [burgersData]);
@@ -65,7 +69,7 @@ const shop = ({burgersData, setBurgersData}) => {
 
   return (
     <div className='flex justify-center items-center bg-[#efefef] h-[100vh] w-full'>
-      <div className='border border-[#5f5f5f] h-[70%] w-[70%]  backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-wrap justify-center z-[2] overflow-scroll'>
+      <div className='border border-[#5f5f5f] h-[70%] w-[70%] backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-wrap justify-center z-[2] overflow-scroll'>
       {
         burgersData.length === 0 ? (
           <h1 className='text-green-600 font-semibold'>Loading...</h1>
@@ -95,5 +99,7 @@ const shop = ({burgersData, setBurgersData}) => {
     </div>
   )
 }
+
+
 
 export default shop

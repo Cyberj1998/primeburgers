@@ -97,9 +97,9 @@ function CartTab() {
     <div className='flex flex-col justify-center items-center bg-[#efefef] h-[100vh] w-full'>
       <div className='border border-[#5f5f5f] h-[70%] w-[70%]  backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-wrap justify-center z-[2] overflow-scroll'>
         {
-            carts.map((item, index ) =>
-                <CartProductCard data={item} key={index} />
-            )
+          carts.map((item, index ) =>
+            <CartProductCard data={item} key={index} />
+          )
         }
       </div>
 

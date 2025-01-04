@@ -10,7 +10,6 @@ const ProductCard = (props) => {
   #25a18e
   #7ae582
 
-
   #00a5cf
   */ 
 
@@ -29,6 +28,7 @@ const ProductCard = (props) => {
   }
 
   const {name, price, description, image, id } = props.data
+  
   
   return (
     <div className='border border-[#5f5f5f] h-fit p-[8px] text-center w-[200px] rounded-[10px] m-5 flex flex-col justify-evenly items-center bg-[#e4e4e4]' id={id}>

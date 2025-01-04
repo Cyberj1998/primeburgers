@@ -4,7 +4,6 @@ const CartProductCard = (props) => {
 
   const {name, price, image, key, quantity } = props.data
 
-
   return (
     <div className='border border-[#5f5f5f] h-[250px] w-[200px] rounded-[10px] m-5 flex flex-col justify-evenly items-center bg-[#e4e4e4]' key={key}>
       <h1 className='font-sans font-semibold text-[#5f5f5f] text-[15px]'>{name}</h1>
@@ -16,6 +15,7 @@ const CartProductCard = (props) => {
     </div>
   )
 }
+
 
 export default CartProductCard
 

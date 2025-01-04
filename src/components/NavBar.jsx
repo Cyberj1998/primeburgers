@@ -7,6 +7,7 @@ import Telegram from '../assets/icons/telegram.svg'
 import Cart from '../assets/icons/cart.png'
 import { useSelector } from 'react-redux'
 
+
 const NavBar = () => {
 
   const [totalQuantity, setTotalQuantity] = useState(0)
@@ -47,3 +48,7 @@ const NavBar = () => {
 }
 
 export default NavBar
+
+
+
+//<Link to='/admin' className='font-sans font-semibold p-5 md:text-[15px] text-[8px] cursor-pointer'>Admin</Link>

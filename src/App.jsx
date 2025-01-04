@@ -14,6 +14,7 @@ import FAQ from './components/FAQ'
 import Shop from './components/Shop'
 import CartTab from './components/CartTab'
 import EmailContact from './components/EmailContact'
+import AdminPanel from './components/AdminPanel'
 
 function App() {
 
@@ -65,3 +66,13 @@ function App() {
 }
 
 export default App
+
+/*
+<Route path='/admin' element={
+            <>
+              <NavBar />
+              <AdminPanel />
+            </>
+          }>
+          </Route>
+*/
