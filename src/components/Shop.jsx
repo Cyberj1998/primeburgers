@@ -31,12 +31,12 @@ const shop = ({burgersData, setBurgersData}) => {
     let { data, error } = await supabase
     .from('burgers')
     .select('*')
-    console.log(data); // Logging fetched products
+    console.log(data);
     if (error) {
       console.log(error);
     } else {
-      setBurgersData(data); // Update state with the fetched data
-      console.log(data); // Log the products
+      setBurgersData(data); 
+      console.log(data); 
     }
 
 
@@ -68,7 +68,7 @@ const shop = ({burgersData, setBurgersData}) => {
 
 
   return (
-    <div className='flex justify-center items-center bg-[#efefef] h-[100vh] w-full'>
+    <div className='flex justify-center items-center bg-[#312f2f] h-[100vh] w-full'>
       <div className='border border-[#5f5f5f] h-[70%] w-[70%] backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-wrap justify-center z-[2] overflow-scroll'>
       {
         burgersData.length === 0 ? (
@@ -92,7 +92,7 @@ const shop = ({burgersData, setBurgersData}) => {
             key={index}
             animate={index === activeIndex ? 'animate' : 'initial'}
             variants={dotVariants}
-            className='bg-[#919191] w-[2.5px] h-[2.5px] rounded-full'
+            className='bg-black w-[2.5px] h-[2.5px] rounded-full'
           />
         ))}
       </div>

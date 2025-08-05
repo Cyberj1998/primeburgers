@@ -3,8 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
-import Carousel from './components/Carousel'
-import Hero from './components/Hero'
 import PromoSection from './components/PromoSection'
 import TryIt from './components/TryIt'
 import Divider from './components/Divider'
@@ -14,7 +12,7 @@ import FAQ from './components/FAQ'
 import Shop from './components/Shop'
 import CartTab from './components/CartTab'
 import EmailContact from './components/EmailContact'
-import AdminPanel from './components/AdminPanel'
+import BentoBox from './components/BentoBox'
 
 function App() {
 
@@ -28,12 +26,10 @@ function App() {
             <>
               <NavBar />
               <Home />
-              <Carousel />
-              <Hero />
+              <BentoBox />
               <TryIt />
-              <PromoSection />
-              <Divider />
               <ResponsiveGallery />
+              <Divider />
               <Opinions />
               <FAQ />
             </>

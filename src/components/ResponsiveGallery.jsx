@@ -64,7 +64,7 @@ const ResponsiveGallery = () => {
   ];
 
   return (
-    <div className='h-[400px] w-full overflow-scroll'>
+    <div className='h-[400px] w-full overflow-scroll bg-[#312f2f]'>
       <Gallery images={images} />
     </div>
   );

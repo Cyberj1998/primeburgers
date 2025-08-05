@@ -59,11 +59,11 @@ const EmailContact = () => {
 
 
   return (
-    <div className='flex justify-center items-center bg-[#efefef] h-[100vh] w-full'>
+    <div className='flex justify-center items-center bg-[#312f2f] h-[100vh] w-full'>
       <div className='border border-[#5f5f5f] h-[70%] w-[70%]  backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-col justify-evenly z-[2]'>
-        <h1 className='m-5 font-sans font-semibold text-[20px] text-[#5f5f5f]'>Envienos su <span className='bg-gradient-to-r from-[#9fffcb] via-[#25a18e] to-[#7ae582] bg-clip-text text-transparent font-extrabold'>Opinion</span></h1>
-        <input type="text" placeholder='Asunto' value={subject} onChange={(e) => setSubject(e.target.value)} className='m-5 bg-[#d8d8d8] rounded-[5px] placeholder:text-black w-[50%]' />
-        <textarea name="Mensaje" placeholder='Mensaje' value={message} onChange={(e) => setMessage(e.target.value)} className='m-5 bg-[#d8d8d8] placeholder:text-black w-[80%] h-[70%]'></textarea>
+        <h1 className='m-5 font-sans font-semibold text-[20px] text-white'>Envienos su <span className='bg-gradient-to-r from-[#9fffcb] via-[#25a18e] to-[#7ae582] bg-clip-text text-transparent font-extrabold'>Opinion</span></h1>
+        <input type="text" placeholder='Asunto' value={subject} onChange={(e) => setSubject(e.target.value)} className='m-5 bg-[#d8d8d8] rounded-[5px] placeholder:text-black w-[90%]' />
+        <textarea name="Mensaje" placeholder='Mensaje' value={message} onChange={(e) => setMessage(e.target.value)} className='m-5 bg-[#d8d8d8] placeholder:text-black w-[90%] h-[70%]'></textarea>
         <button onClick={sendEmail} className='bg-[#7ae582] p-[5px] rounded-[10px] m-5  font-sans font-semibold  text-[#5f5f5f] w-[100px]'>Enviar</button>
       </div>
       <div className='absolute w-full h-full grid grid-cols-10 gap-0' style={{ zIndex: 1 }}>
@@ -72,7 +72,7 @@ const EmailContact = () => {
             key={index}
             animate={index === activeIndex ? 'animate' : 'initial'}
             variants={dotVariants}
-            className='bg-[#919191] w-[2.5px] h-[2.5px] rounded-full'
+            className='bg-black w-[2.5px] h-[2.5px] rounded-full'
           />
         ))}
       </div>

@@ -37,7 +37,7 @@ const Hero = () => {
   */ 
 
   return (
-    <div className='md:h-[500px] h-[500px] w-full flex md:flex-row flex-col justify-center items-center'>
+    <div className='md:h-[500px] h-[500px] w-full flex md:flex-row flex-col justify-center items-center overflow-hidden'>
         <div className='3d-model md:h-[100%] h-[50%] md:w-[50%] w-[100%]'>
             <Canvas 
             className='w-full h-full bg-transparent flex justify-center items-center'

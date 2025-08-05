@@ -94,7 +94,7 @@ function CartTab() {
 
 
   return (
-    <div className='flex flex-col justify-center items-center bg-[#efefef] h-[100vh] w-full'>
+    <div className='flex flex-col justify-center items-center bg-[#312f2f] h-[100vh] w-full'>
       <div className='border border-[#5f5f5f] h-[70%] w-[70%]  backdrop-filter backdrop-blur-[1px] rounded-[10px] flex flex-wrap justify-center z-[2] overflow-scroll'>
         {
           carts.map((item, index ) =>
@@ -104,8 +104,8 @@ function CartTab() {
       </div>
 
       <div className='flex flex-row justify-between items-center border border-[#5f5f5f] h-[50px] w-[70%] rounded-[10px] m-[20px]' >
-        <h1 className='font-sans font-semibold text-[#5f5f5f] m-[10px]'>
-          {`Total:${totalAmount.toFixed(2)}`}
+        <h1 className='font-sans font-semibold text-[#a2a2a2] m-[10px]'>
+          {`Total: $${totalAmount.toFixed(2)}`}
         </h1>
         <button className='bg-[#7ae582] p-[5px] rounded-[10px] m-[10px] font-sans font-semibold cursor-pointer z-30' onClick={()=>setModal(true)}>Check Out</button>
       </div>
@@ -128,7 +128,7 @@ function CartTab() {
             key={index}
             animate={index === activeIndex ? 'animate' : 'initial'}
             variants={dotVariants}
-            className='bg-[#919191] w-[2.5px] h-[2.5px] rounded-full'
+            className='bg-black w-[2.5px] h-[2.5px] rounded-full'
           />
         ))}
       </div>

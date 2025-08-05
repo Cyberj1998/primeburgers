@@ -1,0 +1,107 @@
+.card {
+    /* color used to softly clip top and bottom of the .words container */
+    --bg-color: #212121;
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+  }
+  .loader {
+    color: rgb(124, 124, 124);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+  }
+
+  .words {
+    overflow: hidden;
+    position: relative;
+    height: 55px;
+  }
+  .words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+  }
+
+  .word {
+    display: block;
+    animation: spin_4991 4s infinite;
+  }
+
+  @keyframes spin_4991 {
+    10% {
+      -webkit-transform: translateY(-128%);
+      transform: translateY(-128%);
+    }
+
+    25% {
+      -webkit-transform: translateY(-122%);
+      transform: translateY(-122%);
+    }
+
+    35% {
+      -webkit-transform: translateY(-228%);
+      transform: translateY(-228%);
+    }
+
+    50% {
+      -webkit-transform: translateY(-222%);
+      transform: translateY(-222%);
+    }
+
+    60% {
+      -webkit-transform: translateY(-328%);
+      transform: translateY(-328%);
+    }
+
+    75% {
+      -webkit-transform: translateY(-322%);
+      transform: translateY(-322%);
+    }
+
+    85% {
+      -webkit-transform: translateY(-428%);
+      transform: translateY(-428%);
+    }
+
+    100% {
+      -webkit-transform: translateY(-422%);
+      transform: translateY(-422%);
+    }
+  }
+/* Scrollbar transparente y sin indicadores en WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent; /* Fondo transparente */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Sin track visible */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Sin thumb visible */
+  border-radius: 9999px;
+  border: none;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: none; /* Oculta scrollbar */
+  scrollbar-color: transparent transparent; /* Sin colores thumb y track */
+}
+
+/* Para ocultar completamente scrollbar en todos los navegadores (opcional) */
+*::-webkit-scrollbar {
+  display: none;
+}

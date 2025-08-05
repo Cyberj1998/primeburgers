@@ -49,7 +49,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className='h-[400px] relative'>
+    <div className='h-[200px] relative'>
       <button className='absolute top-1/2 left-3 z-10 text-white font-sans font-semibold backdrop-filter backdrop-blur-xl p-[5px]' onClick={goToPrevImage}>Previous</button>
       <button className='absolute top-1/2 right-3 z-10 text-white font-sans font-semibold backdrop-filter backdrop-blur-xl p-[5px]' onClick={goToNextImage}>Next</button>
       {images.map((image, index) => (
